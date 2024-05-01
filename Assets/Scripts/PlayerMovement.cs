@@ -72,6 +72,32 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+
+        if (animator.GetBool("WallSlide"))
+        {
+            WallJump();
+        }
     }
     
+    public void OnWallEnter()
+    {
+        animator.SetBool("WallSlide", true);
+    }
+
+    public void OnWallExit()
+    {
+        animator.SetBool("WallSlide", false);
+    }
+
+    public void WallJump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb2D.velocity = new Vector2((spriteRenderer.flipX ? 1 : -1) * runSpeed, jumpSpeed);
+            animator.SetBool("WallSlide", false);
+            animator.SetBool("Jump", true);
+        }
+    }
+
+
 }
