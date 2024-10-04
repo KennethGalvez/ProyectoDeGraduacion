@@ -10,6 +10,20 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene(nombreNivel);
     }
+    public void Creditos(string nombreNivel)
+    {
+        SceneManager.LoadScene(nombreNivel);
+    }
+
+    public void Opciones(string nombreNivel)
+    {
+        SceneManager.LoadScene(nombreNivel);
+    }
+
+    public void MenuPrincipal(string nombreNivel)
+    {
+        SceneManager.LoadScene(nombreNivel);
+    }
     public void Salir()
     {
         Application.Quit();
