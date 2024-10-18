@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
 
-    public void Nuevo(string nombreNivel)
+    public PointsManager pointsManager;
+    public void Nuevo()
     {
-        SceneManager.LoadScene(nombreNivel);
+        CargaNivel.NivelCarga("Nivel 1");
+        pointsManager.ResetStats();
     }
     public void Creditos(string nombreNivel)
     {
