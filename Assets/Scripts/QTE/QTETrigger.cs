@@ -5,12 +5,11 @@ public class QTETrigger : MonoBehaviour
 {
     public string quickTimeSceneName = "QTEScene"; // The scene where the QTE will happen
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             // Create a temporary GameObject to hold the QuickTimeManager script
-            Debug.Log("Player has entered the trigger area.");
             GameObject qteManagerObject = new GameObject("QuickTimeManager");
             QuickTimeManager qteManager = qteManagerObject.AddComponent<QuickTimeManager>();
 
