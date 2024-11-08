@@ -2,24 +2,33 @@ using UnityEngine;
 
 public class SceneTransitionOnProximity : MonoBehaviour
 {
-    public GameObject securityPanel; // Reference to the security panel GameObject
-    public float interactionDistance = 2f; // Distance within which the player can interact
-    public Transform player; // Reference to the player object
+    public GameObject securityPanel;
+    public float interactionDistance = 2f; 
+    public Transform player; 
+    public SecurityPanel securityPanelScript; // SecurityPanel script
 
     private bool isPanelActive = false;
 
     private void Update()
     {
-        // Check the distance between the player and this object
-        if (Vector3.Distance(transform.position, player.position) <= interactionDistance)
+        // Check if the player is close enough and the panel is not permanently unlocked
+        if (Vector3.Distance(transform.position, player.position) <= interactionDistance && !securityPanelScript.IsUnlocked)
         {
             if (Input.GetKeyDown(KeyCode.Q) && !isPanelActive)
             {
-                // Freeze the game and activate the security panel
+                // Activate the panel and freeze the game
                 Time.timeScale = 0f; // Freeze the game
                 securityPanel.SetActive(true); // Activate the panel
                 isPanelActive = true;
             }
         }
+    }
+
+    public void ClosePanel()
+    {
+        // Close the panel and unfreeze the game
+        securityPanel.SetActive(false);
+        Time.timeScale = 1f;
+        isPanelActive = false;
     }
 }
