@@ -350,6 +350,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -5936,6 +5940,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -6463,6 +6471,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -7785,6 +7797,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -8061,6 +8077,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -8378,6 +8398,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -9283,6 +9307,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -9472,6 +9500,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -9537,6 +9569,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -9718,6 +9754,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -10022,6 +10062,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -11724,6 +11768,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -11949,6 +11997,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -12014,6 +12066,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -12924,6 +12980,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -12989,6 +13049,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -13551,6 +13615,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -14037,6 +14105,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -14187,6 +14259,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -14252,6 +14328,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -14486,6 +14566,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -19438,6 +19522,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -19593,6 +19681,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -19742,6 +19834,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -19893,6 +19989,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -19958,6 +20058,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -20369,6 +20473,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -20846,6 +20954,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -21477,6 +21589,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -21711,6 +21827,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -21776,6 +21896,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
@@ -22586,6 +22710,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -23072,6 +23200,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
       objectReference: {fileID: 803444408}
@@ -23448,6 +23580,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 14149074}
     m_Modifications:
+    - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 358084420}
     - target: {fileID: 1265726910630328577, guid: 5e4b3790956af1b499e2fbf72183bc78, type: 3}
       propertyPath: teleportPoint
       value: 
