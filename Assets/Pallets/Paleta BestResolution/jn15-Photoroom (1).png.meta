@@ -1,0 +1,1020 @@
+fileFormatVersion: 2
+guid: 99a199f6b0f62ca42b8d858ff93664f2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1531
+        width: 225
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b8e7affd2b9d6488d7dd8fbb7b749d
+      internalID: -314059674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_1
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 1601
+        width: 120
+        height: 447
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d793dade4cb463346ade62f3c658e1ee
+      internalID: -1086321089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_2
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1387
+        width: 376
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06eab2ddfb3aef94f9b0d99f81412790
+      internalID: -663668924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_3
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1711
+        width: 318
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e6a79325938b044bf49fe82aef7308
+      internalID: 2045170014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_4
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 1719
+        width: 278
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14859109bbf7b0540a499807a0b09aed
+      internalID: -2127893044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_5
+      rect:
+        serializedVersion: 2
+        x: 1309
+        y: 1825
+        width: 142
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517a46b4dd90cb84fab67558714b62f1
+      internalID: -476323264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_6
+      rect:
+        serializedVersion: 2
+        x: 1445
+        y: 1897
+        width: 124
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 972cc99144253ae4b98f583a38687c04
+      internalID: 1474429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_7
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 1481
+        width: 338
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31d7e632a3dc8048b1f130f317a5da6
+      internalID: 1113090610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_8
+      rect:
+        serializedVersion: 2
+        x: 1667
+        y: 1783
+        width: 340
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d770e1ccc998987459d58a89b1d41e08
+      internalID: -1815355489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_9
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1461
+        width: 78
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2c91c199e4e0e49bc3e3e1cbc2bfa7
+      internalID: -468804692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_10
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 1581
+        width: 202
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8332f22ca2ffb94097723e7c2eb78ca
+      internalID: -999637898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_11
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 1471
+        width: 159
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d83a91165c040419adde735b6241eb
+      internalID: 308444765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_12
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 1515
+        width: 84
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b2c21e07eaaff4bb27f090c2365b11
+      internalID: -1624323295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_13
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 1461
+        width: 84
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a79bf7134e40c54fa8ee2b88afea10e
+      internalID: 443249229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_14
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 1453
+        width: 174
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a98fc21225a8e4d9a22803e5c8f8ef
+      internalID: -1233473607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_15
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1293
+        width: 258
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c289e745b1d477f458b4f9829a4d8543
+      internalID: -548206769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_16
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 1148
+        width: 368
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c73f68c1c67486439f712336ad6a297
+      internalID: 1977436026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_17
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 1361
+        width: 40
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba4f9c13222ec0a47b26e0134f8d5224
+      internalID: 1567719154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_18
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 1285
+        width: 163
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd164636d456334bb5f10d0c10aadc9
+      internalID: 1427330807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_19
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 1063
+        width: 388
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959c725ac852cdc4da58005e073d5716
+      internalID: -324024696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_20
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 1029
+        width: 617
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00cbe56136897c46a7eaba7f67c4488
+      internalID: -1580907025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_21
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 1053
+        width: 315
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7f0c027ae212d47ba40c7ed7229120
+      internalID: -1677568899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_22
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1195
+        width: 48
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeeb8453a53d61147ad91f30db2b98c1
+      internalID: 2064507598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_23
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 1067
+        width: 179
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82aa70dc175f1e24db5eb07f82f70ac4
+      internalID: -1395833584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_24
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 1153
+        width: 54
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4950fcf296e03dd4db9f1218d2bbd472
+      internalID: 286244233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_25
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 1049
+        width: 112
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08cb25b5bca934744aaa9aacdf9b4893
+      internalID: 559387538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_26
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 1097
+        width: 56
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2974e6b9950bc5d4b98d4f064af7c491
+      internalID: -2009545032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_27
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 1061
+        width: 74
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d74ff1bdcbe3c547a1137b884c2d944
+      internalID: -1849495004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_28
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 1047
+        width: 88
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cd4c1536bccfd44896cc1cf53707fd7
+      internalID: 549263131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_29
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 1039
+        width: 90
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a684125035950c043b01b3cda42f2f3c
+      internalID: 583280316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_30
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 1039
+        width: 106
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec555e76d9c12204c8f04c92f6ba56d5
+      internalID: 1288540264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_31
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 1037
+        width: 74
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a14187d02828743842b18a5230b49d
+      internalID: -760908117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_32
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 423
+        width: 192
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f61da5daf6f061419863c702dd67d11
+      internalID: -1642685270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_33
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 217
+        width: 687
+        height: 728
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a14229c14ce0b046a55d2a022df79ad
+      internalID: -824297879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_34
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 203
+        width: 457
+        height: 782
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed6260d1a3662a74698ceb0adc0c7fba
+      internalID: -884073761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_35
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 447
+        width: 142
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f453f8ea6b6561b44860c6eab1d9aa02
+      internalID: -211878742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_36
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 451
+        width: 94
+        height: 362
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df0193cc37592f4ca621fb7e6197038
+      internalID: -837938242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_37
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 213
+        width: 334
+        height: 708
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2792e9d7b887ecb48a8fdb5894729d2f
+      internalID: -1868662040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_38
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 221
+        width: 210
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7309e92e88c1b46bb0b0390ec6c49e
+      internalID: -99080762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jn15-Photoroom (1)_39
+      rect:
+        serializedVersion: 2
+        x: 1517
+        y: 217
+        width: 228
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51eced67879bb04f8dec2d68d43ffd3
+      internalID: -133910893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      jn15-Photoroom (1)_0: -314059674
+      jn15-Photoroom (1)_1: -1086321089
+      jn15-Photoroom (1)_10: -999637898
+      jn15-Photoroom (1)_11: 308444765
+      jn15-Photoroom (1)_12: -1624323295
+      jn15-Photoroom (1)_13: 443249229
+      jn15-Photoroom (1)_14: -1233473607
+      jn15-Photoroom (1)_15: -548206769
+      jn15-Photoroom (1)_16: 1977436026
+      jn15-Photoroom (1)_17: 1567719154
+      jn15-Photoroom (1)_18: 1427330807
+      jn15-Photoroom (1)_19: -324024696
+      jn15-Photoroom (1)_2: -663668924
+      jn15-Photoroom (1)_20: -1580907025
+      jn15-Photoroom (1)_21: -1677568899
+      jn15-Photoroom (1)_22: 2064507598
+      jn15-Photoroom (1)_23: -1395833584
+      jn15-Photoroom (1)_24: 286244233
+      jn15-Photoroom (1)_25: 559387538
+      jn15-Photoroom (1)_26: -2009545032
+      jn15-Photoroom (1)_27: -1849495004
+      jn15-Photoroom (1)_28: 549263131
+      jn15-Photoroom (1)_29: 583280316
+      jn15-Photoroom (1)_3: 2045170014
+      jn15-Photoroom (1)_30: 1288540264
+      jn15-Photoroom (1)_31: -760908117
+      jn15-Photoroom (1)_32: -1642685270
+      jn15-Photoroom (1)_33: -824297879
+      jn15-Photoroom (1)_34: -884073761
+      jn15-Photoroom (1)_35: -211878742
+      jn15-Photoroom (1)_36: -837938242
+      jn15-Photoroom (1)_37: -1868662040
+      jn15-Photoroom (1)_38: -99080762
+      jn15-Photoroom (1)_39: -133910893
+      jn15-Photoroom (1)_4: -2127893044
+      jn15-Photoroom (1)_5: -476323264
+      jn15-Photoroom (1)_6: 1474429
+      jn15-Photoroom (1)_7: 1113090610
+      jn15-Photoroom (1)_8: -1815355489
+      jn15-Photoroom (1)_9: -468804692
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
