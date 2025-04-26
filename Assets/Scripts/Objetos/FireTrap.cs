@@ -4,16 +4,16 @@ using System.Collections;
 
 public class FireTrap : MonoBehaviour
 {
-    public Collider2D fireCollider; // Referencia al collider del fuego
-    public Animator animator; // Referencia al Animator
-    public ParticleSystem smokeParticle; // Sistema de partículas de humo
-    public float fireOnTime = 2f; // Duración del fuego activo
-    public float fireOffTime = 2f; // Duración del fuego inactivo
-    public float smokeLeadTime = 1f; // Tiempo antes de que salga el fuego para que aparezca el humo
+    public Collider2D fireCollider; // Fire collision
+    public GameObject fireObject;   
+    public ParticleSystem smokeParticle; // Smoke particle system
+    public float fireOnTime = 2f;
+    public float fireOffTime = 2f;
+    public float smokeLeadTime = 1f;
 
-    public Transform teleportPoint; // Punto de teletransporte
-    public Image fadeImage; // Imagen negra para el efecto de fade
-    public float fadeDuration = 1f; // Duración de la transición de pantalla
+    public Transform teleportPoint; // Teleport target
+    public Image fadeImage;
+    public float fadeDuration = 1f;
 
     private bool isFireActive = false;
 
@@ -22,67 +22,84 @@ public class FireTrap : MonoBehaviour
         StartCoroutine(FireCycle());
     }
 
-    // Ciclo del fuego con humo previo
+    private void Update()
+    {
+        if (isFireActive)
+        {
+            CheckForPlayerHit();
+        }
+    }
+
+
     private IEnumerator FireCycle()
     {
         while (true)
         {
-            // Activar humo antes del fuego
+            // Enable smoke GameObject if it's disabled
             if (smokeParticle != null)
             {
-                smokeParticle.gameObject.SetActive(true); // Activar el sistema de partículas
+                smokeParticle.gameObject.SetActive(true);
                 smokeParticle.Play();
-                Debug.Log("Humo activo");
+                Debug.Log("Smoke ON");
             }
 
             yield return new WaitForSeconds(smokeLeadTime);
 
-            // Apagar humo antes de encender el fuego
+            // Stop smoke
             if (smokeParticle != null)
             {
                 smokeParticle.Stop();
-                smokeParticle.gameObject.SetActive(false); // Desactivar el sistema de partículas
-                Debug.Log("Humo desactivado");
+                smokeParticle.gameObject.SetActive(false);
+                Debug.Log("Smoke OFF");
             }
 
-            // Activar el fuego
+            // Activate fire
             isFireActive = true;
             fireCollider.enabled = true;
-            animator.SetBool("fuego", true);
-            Debug.Log("Fire is ON");
 
-            // Esperar mientras el fuego está activo
+            if (fireObject != null)
+            {
+                fireObject.SetActive(true);
+                Debug.Log("Fire ON");
+            }
+
             yield return new WaitForSeconds(fireOnTime);
 
-            // Desactivar el fuego
+            // Deactivate fire
             isFireActive = false;
             fireCollider.enabled = false;
-            animator.SetBool("fuego", false);
-            Debug.Log("Fire is OFF");
 
-            // Esperar mientras el fuego está inactivo
+            if (fireObject != null)
+            {
+                fireObject.SetActive(false);
+                Debug.Log("Fire OFF");
+            }
+
             yield return new WaitForSeconds(fireOffTime);
         }
     }
 
-    // Detectar colisión con el jugador
-    private void OnTriggerEnter2D(Collider2D other)
+
+    public LayerMask playerLayer; // Assign this in Inspector
+
+    private void CheckForPlayerHit()
     {
-        if (isFireActive && other.CompareTag("Player"))
+        if (!isFireActive) return;
+
+        Collider2D hit = Physics2D.OverlapBox(fireCollider.bounds.center, fireCollider.bounds.size, 0f, playerLayer);
+        if (hit != null && hit.CompareTag("Player"))
         {
-            Debug.Log("Player hit by fire!");
-            StartCoroutine(HandlePlayerHit(other.gameObject));
+            Debug.Log("Player hit manually detected!");
+            StartCoroutine(HandlePlayerHit(hit.gameObject));
         }
     }
 
-    // Manejar colisión con el fuego
+
     private IEnumerator HandlePlayerHit(GameObject character)
     {
-        // Congelar la pantalla
         Time.timeScale = 0f;
         yield return StartCoroutine(FadeToBlack());
 
-        // Teletransportar al jugador
         if (teleportPoint != null)
         {
             character.transform.position = teleportPoint.position;
@@ -93,17 +110,15 @@ public class FireTrap : MonoBehaviour
             Debug.LogWarning("Teleport point not set!");
         }
 
-        // Reanudar la pantalla y transición de regreso
         yield return StartCoroutine(FadeToClear());
         Time.timeScale = 1f;
     }
 
-    // Efecto de desvanecimiento a negro
     private IEnumerator FadeToBlack()
     {
         if (fadeImage != null)
         {
-            fadeImage.gameObject.SetActive(true); // Activar imagen negra
+            fadeImage.gameObject.SetActive(true);
             float timer = 0f;
             Color color = fadeImage.color;
 
@@ -111,7 +126,7 @@ public class FireTrap : MonoBehaviour
             {
                 color.a = Mathf.Lerp(0f, 1f, timer / fadeDuration);
                 fadeImage.color = color;
-                timer += Time.unscaledDeltaTime; // Usar tiempo no escalado por pausa
+                timer += Time.unscaledDeltaTime;
                 yield return null;
             }
 
@@ -120,7 +135,6 @@ public class FireTrap : MonoBehaviour
         }
     }
 
-    // Efecto de desvanecimiento a claro
     private IEnumerator FadeToClear()
     {
         if (fadeImage != null)
@@ -132,13 +146,13 @@ public class FireTrap : MonoBehaviour
             {
                 color.a = Mathf.Lerp(1f, 0f, timer / fadeDuration);
                 fadeImage.color = color;
-                timer += Time.unscaledDeltaTime; // Usar tiempo no escalado por pausa
+                timer += Time.unscaledDeltaTime;
                 yield return null;
             }
 
             color.a = 0f;
             fadeImage.color = color;
-            fadeImage.gameObject.SetActive(false); // Desactivar imagen negra
+            fadeImage.gameObject.SetActive(false);
         }
     }
 }
