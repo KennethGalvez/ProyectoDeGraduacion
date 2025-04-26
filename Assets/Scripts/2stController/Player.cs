@@ -22,6 +22,15 @@ public class Player : MonoBehaviour
     private int facingDirection = 1;
     [SerializeField] private Vector2 wallJumpDirection;
 
+    [Header("Dash Settings")]
+    [SerializeField] private float dashSpeed = 15f;
+    [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private float dashCooldown = 1f;
+    private bool canDash = true;
+    private bool isDashing = false;
+    private float dashTimeCounter;
+
+
     [Header("Collision")]
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
@@ -37,6 +46,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
+        if (isDashing)
+        {
+            DashLogic(); // New method for handling dash
+            return; // Skip normal movement while dashing
+        }
+
         CollisionCheck();
         FlipController();
         AnimatorController();
@@ -47,6 +63,7 @@ public class Player : MonoBehaviour
             canMove = true;
             canDoubleJump = true;
             isWallSliding = false;
+            canDash = true; // reset dash when grounded
         }
 
         if (isWallDetected && rb.velocity.y < 0 && movingInput != 0)
@@ -79,6 +96,12 @@ public class Player : MonoBehaviour
         {
             JumpButton();
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            StartDash();
+        }
+
     }
 
     private void Move()
@@ -88,6 +111,39 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(movingInput * speed, rb.velocity.y);
         }
     }
+
+    private void StartDash()
+    {
+        isDashing = true;
+        canDash = false;
+        dashTimeCounter = dashDuration;
+
+        // Freeze Y velocity so it feels sharp
+        rb.velocity = new Vector2(facingDirection * dashSpeed, 0f);
+
+        anim.SetTrigger("Dash"); // We'll add this animation trigger later
+    }
+
+    private void DashLogic()
+    {
+        if (dashTimeCounter > 0)
+        {
+            rb.velocity = new Vector2(facingDirection * dashSpeed, 0f);
+            dashTimeCounter -= Time.deltaTime;
+        }
+        else
+        {
+            isDashing = false;
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+            Invoke(nameof(ResetDash), dashCooldown); // Cooldown before dashing again
+        }
+    }
+
+    private void ResetDash()
+    {
+        canDash = true;
+    }
+
 
     private void JumpButton()
     {

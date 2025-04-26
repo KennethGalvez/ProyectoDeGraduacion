@@ -9,6 +9,7 @@ public class SecurityPanel : MonoBehaviour
     public Sprite defaultSprite; 
     public Sprite greenSprite; 
     public Sprite redSprite; 
+    public static bool DoorShouldOpen = false;
 
     public bool[] correctPattern; 
     public AudioSource correctSound; 
@@ -96,12 +97,15 @@ public class SecurityPanel : MonoBehaviour
 
         if (isCorrect)
         {
-            // correcto sound
             correctSound.Play();
-            isUnlocked = true; // unlock panel
-            FindObjectOfType<SceneTransitionOnProximity>().ClosePanel(); // SceneTransitionOnProximity script
+            isUnlocked = true;
+            DoorShouldOpen = true; // <-- 🚨 Set static variable to true
+
+            FindObjectOfType<SceneTransitionOnProximity>().ClosePanel();
             Debug.Log("Correct Pattern! La puerta se ha abierto");
         }
+
+
         else
         {
             // incorrecto
