@@ -188,6 +188,9 @@ MonoBehaviour:
   speed: 1.5
   jumpForce: 3
   wallJumpDirection: {x: 2, y: 3}
+  dashSpeed: 3
+  dashDuration: 0.2
+  dashCooldown: 1
   groundCheckDistance: 0.19
   whatIsGround:
     serializedVersion: 2
