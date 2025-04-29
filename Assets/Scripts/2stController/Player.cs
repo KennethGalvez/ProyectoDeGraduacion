@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float jumpForce = 12;
 
+    private bool dashSkillUnlocked = false;
+    private bool doubleJumpSkillUnlocked = false;
+
+
     private bool canMove = true;
     private bool canDoubleJump;
     private bool canWallSlide;
@@ -46,6 +50,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        dashSkillUnlocked = QuickTimeManager.dashUnlocked;
+        doubleJumpSkillUnlocked = QuickTimeManager.doubleJumpUnlocked;
 
         if (isDashing)
         {
@@ -61,9 +67,11 @@ public class Player : MonoBehaviour
         if (isGrounded)
         {
             canMove = true;
-            canDoubleJump = true;
+            canDoubleJump = doubleJumpSkillUnlocked;
             isWallSliding = false;
             canDash = true; // reset dash when grounded
+            if (dashSkillUnlocked)
+                canDash = true; // Only reset dash if it's unlocked
         }
 
         if (isWallDetected && rb.velocity.y < 0 && movingInput != 0)
@@ -97,7 +105,7 @@ public class Player : MonoBehaviour
             JumpButton();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashSkillUnlocked)
         {
             StartDash();
         }
@@ -155,12 +163,13 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
-        else if (canDoubleJump)
+        else if (canDoubleJump && doubleJumpSkillUnlocked)
         {
             canMove = true;
             canDoubleJump = false;
             Jump();
         }
+
 
         canWallSlide = false;
     }

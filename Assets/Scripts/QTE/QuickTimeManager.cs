@@ -12,6 +12,10 @@ public class QuickTimeManager : MonoBehaviour
 
     private bool eventCompleted = false;
 
+    public static bool dashUnlocked = false;
+    public static bool doubleJumpUnlocked = false;
+
+
     private void Start()
     {
         // Hide the feedback text initially
@@ -34,16 +38,17 @@ public class QuickTimeManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                // Add heart points if "Q" is pressed
                 pointsManager.AddHeartPoints(1);
-                ShowFeedback("El camino del corazon!");
+                dashUnlocked = true; // ✅ Unlock dash
+                ShowFeedback("¡El camino del corazón! Dash desbloqueado.");
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
-                // Add mind points if "E" is pressed
                 pointsManager.AddMindPoints(1);
-                ShowFeedback("El camino de la mente!");
+                doubleJumpUnlocked = true; // ✅ Unlock double jump
+                ShowFeedback("¡El camino de la mente! Doble salto desbloqueado.");
             }
+
         }
     }
 
