@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-
     public PointsManager pointsManager;
-    public void Nuevo()
+
+    public void Nuevo(string nombreNivel)
     {
-        CargaNivel.NivelCarga("CinematicaIntro");
+        MuteMenuAudio(); // 🔇 Silencia el audio del menú antes de cambiar de escena
+        SceneManager.LoadScene(nombreNivel);
         pointsManager.ResetStats();
     }
+
     public void Creditos(string nombreNivel)
     {
         SceneManager.LoadScene(nombreNivel);
@@ -26,8 +28,19 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene(nombreNivel);
     }
+
     public void Salir()
     {
         Application.Quit();
+    }
+
+    private void MuteMenuAudio()
+    {
+        AudioSource[] audioSources = FindObjectsOfType<AudioSource>();
+
+        foreach (AudioSource audio in audioSources)
+        {
+            audio.Stop();
+        }
     }
 }

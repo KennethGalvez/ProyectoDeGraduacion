@@ -7,8 +7,9 @@ public class QuickTimeManager : MonoBehaviour
 {
     public PointsManager pointsManager;
 
-    public PlayableDirector heartPathTimeline;  // Timeline para el camino del corazón (Q)
-    public PlayableDirector mindPathTimeline;   // Timeline para el camino de la mente (E)
+    public PlayableDirector currentTimeline;     // Timeline activo al iniciar
+    public PlayableDirector heartPathTimeline;   // Timeline Q
+    public PlayableDirector mindPathTimeline;    // Timeline E
 
     private bool eventCompleted = false;
 
@@ -19,44 +20,52 @@ public class QuickTimeManager : MonoBehaviour
     {
         DestroyExtraEventSystems();
         DisableExtraAudioListeners();
+
+        if (currentTimeline != null)
+        {
+            currentTimeline.gameObject.SetActive(true);
+            currentTimeline.Play();
+        }
     }
 
     private void Update()
     {
-        if (!eventCompleted)
+        if (!eventCompleted && currentTimeline != null && currentTimeline.state == PlayState.Playing)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 pointsManager.AddHeartPoints(1);
                 dashUnlocked = true;
-                ActivateTimeline(heartPathTimeline);
-                eventCompleted = true;
+                InterruptTimeline(heartPathTimeline, goToNivel2: true);
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
                 pointsManager.AddMindPoints(1);
                 doubleJumpUnlocked = true;
-                ActivateTimeline(mindPathTimeline, goToNivel2: true);
-                eventCompleted = true;
+                InterruptTimeline(mindPathTimeline, goToNivel2: true);
             }
         }
     }
 
-    private void ActivateTimeline(PlayableDirector timeline, bool goToNivel2 = false)
+    private void InterruptTimeline(PlayableDirector nextTimeline, bool goToNivel2 = false)
     {
-        if (timeline != null)
+        // Detener y desactivar el timeline actual
+        currentTimeline.Stop();
+        currentTimeline.gameObject.SetActive(false);
+
+        // Activar y reproducir el siguiente timeline
+        if (nextTimeline != null)
         {
-            timeline.Play();
+            nextTimeline.gameObject.SetActive(true);
+            nextTimeline.Play();
 
             if (goToNivel2)
             {
-                timeline.stopped += OnMindPathTimelineFinished;
+                nextTimeline.stopped += OnMindPathTimelineFinished;
             }
         }
-        else
-        {
-            Debug.LogWarning("No se asignó un Timeline para este camino.");
-        }
+
+        eventCompleted = true;
     }
 
     private void OnMindPathTimelineFinished(PlayableDirector director)

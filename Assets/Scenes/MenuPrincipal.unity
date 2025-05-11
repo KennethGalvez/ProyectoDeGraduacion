@@ -904,9 +904,9 @@ VideoPlayer:
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 209434311}
   m_DirectAudioVolumes:
   - 1
   m_Url: 
@@ -1188,7 +1188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5f165a2bb6cdd4a88e75383e961374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsManager: {fileID: 0}
+  pointsManager: {fileID: 1935411222}
 --- !u!1 &1483805801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,13 +1735,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1014804426}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: Nuevo
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PantallaDeCarga
+          m_StringArgument: CinematicaIntro
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1823037466
@@ -1916,6 +1916,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879999847}
   m_CullTransparentMesh: 1
+--- !u!1 &1935411221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1935411223}
+  - component: {fileID: 1935411222}
+  m_Layer: 0
+  m_Name: Estadistica
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1935411222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935411221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbc8d41ff3c1ee41a94554518caa0b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 11400000, guid: aaadbc2e4929f4c4d8a87ccdf3427f0b, type: 2}
+--- !u!4 &1935411223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935411221}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 966.35345, y: 625.3142, z: -6.5908384}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2120867740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,3 +2107,4 @@ SceneRoots:
   - {fileID: 388267780}
   - {fileID: 976099762}
   - {fileID: 209434312}
+  - {fileID: 1935411223}
