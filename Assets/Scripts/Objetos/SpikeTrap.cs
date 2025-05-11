@@ -20,10 +20,15 @@ public class SpikeTrap : MonoBehaviour
     // Manejar colisión con los pinchos y aplicar efecto de fade
     private IEnumerator HandlePlayerHit(GameObject character)
     {
-        // Activar fade a negro
+        Player playerScript = character.GetComponent<Player>();
+        if (playerScript != null)
+        {
+            yield return playerScript.TakeHitAndRecover();
+        }
+
+        Time.timeScale = 0f;
         yield return StartCoroutine(FadeToBlack());
 
-        // Teletransportar al jugador
         if (teleportPoint != null)
         {
             character.transform.position = teleportPoint.position;
@@ -31,12 +36,14 @@ public class SpikeTrap : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Teleport point not set for the SpikeTrap!");
+            Debug.LogWarning("Teleport point not set!");
         }
 
-        // Volver a aclarar la pantalla
         yield return StartCoroutine(FadeToClear());
+        Time.timeScale = 1f;
     }
+
+
 
     // Efecto de desvanecimiento a negro
     private IEnumerator FadeToBlack()

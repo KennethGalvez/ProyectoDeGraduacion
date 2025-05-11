@@ -216,6 +216,23 @@ public class Player : MonoBehaviour
         transform.Rotate(0, 180, 0);
     }
 
+        // Manejar reacción al daño desde trampas
+    public IEnumerator TakeHitAndRecover()
+    {
+        // Reproducir animación de daño si tienes un trigger o bool
+        anim.SetTrigger("Hit"); // Asegúrate de tener esta animación en el Animator
+
+        // Desactivar el movimiento y detener al personaje
+        canMove = false;
+        rb.velocity = Vector2.zero;
+
+        // Esperar una breve pausa antes de permitir el movimiento de nuevo
+        yield return new WaitForSecondsRealtime(0.5f); // Puedes ajustar el tiempo
+
+        canMove = true;
+    }
+
+
     private void AnimatorController()
     {
         bool Run = Mathf.Abs(rb.velocity.x) > 0.1f;

@@ -1,15 +1,18 @@
 using UnityEngine;
-using Cinemachine; // Make sure you have using Cinemachine!
+using Cinemachine;
 
 public class CameraSwitchTrigger : MonoBehaviour
 {
-    public Collider2D triggerCollider; // Collider attached to the empty GameObject
-    public LayerMask playerLayer; // Set this to the Player layer in Inspector
+    public Collider2D triggerCollider;
+    public LayerMask playerLayer;
 
-    public CinemachineVirtualCamera currentCamera; // Camera to deactivate
-    public CinemachineVirtualCamera newCamera; // Camera to activate
+    public CinemachineVirtualCamera currentCamera;
+    public CinemachineVirtualCamera newCamera;
 
-    private bool hasSwitched = false; // Prevent multiple switches
+    [Header("Optional GameObject to Activate")]
+    public GameObject objectToActivate; // ✅ Objeto que se activará al cruzar
+
+    private bool hasSwitched = false;
 
     private void Update()
     {
@@ -38,9 +41,14 @@ public class CameraSwitchTrigger : MonoBehaviour
 
         if (newCamera != null)
             newCamera.gameObject.SetActive(true);
+
+        if (objectToActivate != null)
+        {
+            objectToActivate.SetActive(true);
+            Debug.Log("Activated: " + objectToActivate.name);
+        }
     }
 
-    // Optional: draw the box in Scene view for easier setup
     private void OnDrawGizmos()
     {
         if (triggerCollider != null)

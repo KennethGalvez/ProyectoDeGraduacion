@@ -24,9 +24,18 @@ public class SecurityPanel : MonoBehaviour
     private void Start()
     {
         isGreenStates = new bool[linkedIndicators.Length];
-        LoadProgress(); // Load saved progress
+
+        // ✅ Fuerza todos los indicadores a rojo al abrir
+        for (int i = 0; i < isGreenStates.Length; i++)
+        {
+            isGreenStates[i] = false; // false = rojo
+            linkedIndicators[i].sprite = redSprite;
+        }
+
+        // Actualiza visualmente los botones
         UpdateButtonSprites();
     }
+
 
     private void Update()
     {

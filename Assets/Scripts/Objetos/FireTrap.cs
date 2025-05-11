@@ -4,16 +4,19 @@ using System.Collections;
 
 public class FireTrap : MonoBehaviour
 {
-    public Collider2D fireCollider; // Fire collision
-    public GameObject fireObject;   
-    public ParticleSystem smokeParticle; // Smoke particle system
+    public Collider2D fireCollider;
+    public GameObject fireObject;
+    public ParticleSystem smokeParticle;
     public float fireOnTime = 2f;
     public float fireOffTime = 2f;
     public float smokeLeadTime = 1f;
 
-    public Transform teleportPoint; // Teleport target
+    public Transform teleportPoint;
     public Image fadeImage;
     public float fadeDuration = 1f;
+
+    [Header("Audio")]
+    public AudioSource fireSound; // 🔊 Sonido de fuego (asignar en inspector)
 
     private bool isFireActive = false;
 
@@ -30,12 +33,10 @@ public class FireTrap : MonoBehaviour
         }
     }
 
-
     private IEnumerator FireCycle()
     {
         while (true)
         {
-            // Enable smoke GameObject if it's disabled
             if (smokeParticle != null)
             {
                 smokeParticle.gameObject.SetActive(true);
@@ -45,7 +46,6 @@ public class FireTrap : MonoBehaviour
 
             yield return new WaitForSeconds(smokeLeadTime);
 
-            // Stop smoke
             if (smokeParticle != null)
             {
                 smokeParticle.Stop();
@@ -53,7 +53,7 @@ public class FireTrap : MonoBehaviour
                 Debug.Log("Smoke OFF");
             }
 
-            // Activate fire
+            // Activar fuego y sonido
             isFireActive = true;
             fireCollider.enabled = true;
 
@@ -63,9 +63,14 @@ public class FireTrap : MonoBehaviour
                 Debug.Log("Fire ON");
             }
 
+            if (fireSound != null)
+            {
+                fireSound.Play();
+            }
+
             yield return new WaitForSeconds(fireOnTime);
 
-            // Deactivate fire
+            // Desactivar fuego y sonido
             isFireActive = false;
             fireCollider.enabled = false;
 
@@ -73,6 +78,11 @@ public class FireTrap : MonoBehaviour
             {
                 fireObject.SetActive(false);
                 Debug.Log("Fire OFF");
+            }
+
+            if (fireSound != null)
+            {
+                fireSound.Stop();
             }
 
             yield return new WaitForSeconds(fireOffTime);
@@ -97,6 +107,12 @@ public class FireTrap : MonoBehaviour
 
     private IEnumerator HandlePlayerHit(GameObject character)
     {
+        Player playerScript = character.GetComponent<Player>();
+        if (playerScript != null)
+        {
+            yield return playerScript.TakeHitAndRecover();
+        }
+
         Time.timeScale = 0f;
         yield return StartCoroutine(FadeToBlack());
 
@@ -113,6 +129,7 @@ public class FireTrap : MonoBehaviour
         yield return StartCoroutine(FadeToClear());
         Time.timeScale = 1f;
     }
+
 
     private IEnumerator FadeToBlack()
     {
