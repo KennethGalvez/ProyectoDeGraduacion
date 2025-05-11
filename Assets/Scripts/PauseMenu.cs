@@ -1,15 +1,18 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;  
-using UnityEngine.UI;               
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pausePanel; 
+    public GameObject pausePanel; // Assign your Pause Panel here
     private bool isPaused = false;
+    private AudioSource[] allAudioSources;
 
     void Start()
     {
-        pausePanel.SetActive(false); 
+        pausePanel.SetActive(false);
+        EnsurePausePanelIsOnTop();
     }
 
     void Update()
@@ -17,37 +20,59 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
-            {
-                ResumeGame(); 
-            }
+                ResumeGame();
             else
+                PauseGame();
+        }
+    }
+
+    void PauseGame()
+    {
+        // Show pause panel and stop time
+        pausePanel.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+
+        // Pause all AudioSources
+        allAudioSources = FindObjectsOfType<AudioSource>();
+        foreach (AudioSource audio in allAudioSources)
+        {
+            audio.Pause();
+        }
+
+        // Ensure the panel is on top
+        EnsurePausePanelIsOnTop();
+    }
+
+    public void ResumeGame()
+    {
+        // Resume time and hide panel
+        Time.timeScale = 1f;
+        pausePanel.SetActive(false);
+        isPaused = false;
+
+        // Resume all AudioSources
+        if (allAudioSources != null)
+        {
+            foreach (AudioSource audio in allAudioSources)
             {
-                PauseGame(); 
+                audio.UnPause();
             }
         }
     }
 
-
-    void PauseGame()
-    {
-        pausePanel.SetActive(true);      
-        Time.timeScale = 0f;             
-        isPaused = true;
-    }
-
-    
-    public void ResumeGame()
-    {
-        pausePanel.SetActive(false);     
-        Time.timeScale = 1f;             
-        isPaused = false;
-    }
-
-   
     public void GoToMainMenu()
     {
-        Time.timeScale = 1f;            
-        SceneManager.LoadScene("MenuPrincipal"); 
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MenuPrincipal");
+    }
+
+    private void EnsurePausePanelIsOnTop()
+    {
+        Canvas parentCanvas = pausePanel.GetComponentInParent<Canvas>();
+        if (parentCanvas != null)
+        {
+            parentCanvas.sortingOrder = 9999; // Push to the top visually
+        }
     }
 }
-

@@ -9,7 +9,7 @@ public class MenuController : MonoBehaviour
     public PointsManager pointsManager;
     public void Nuevo()
     {
-        CargaNivel.NivelCarga("Nivel 1");
+        CargaNivel.NivelCarga("CinematicaIntro");
         pointsManager.ResetStats();
     }
     public void Creditos(string nombreNivel)
