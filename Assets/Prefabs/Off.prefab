@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6cfbdfa35ea6d54ebd3773f65751b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireCollider: {fileID: 6433687789478601829}
+  fireCollider: {fileID: 1418114390662938871}
   fireObject: {fileID: 4063848537144438820}
   smokeParticle: {fileID: 4302151010758018595}
   fireOnTime: 2
@@ -333,14 +333,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2935305464756128188, guid: 63e702d57fb77e24bbebdcf5827ef0d6, type: 3}
   m_PrefabInstance: {fileID: 3336960328538873048}
   m_PrefabAsset: {fileID: 0}
+--- !u!60 &1418114390662938871 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4458955312760937519, guid: 63e702d57fb77e24bbebdcf5827ef0d6, type: 3}
+  m_PrefabInstance: {fileID: 3336960328538873048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4063848537144438820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1597356249536359676, guid: 63e702d57fb77e24bbebdcf5827ef0d6, type: 3}
-  m_PrefabInstance: {fileID: 3336960328538873048}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &6433687789478601829 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 8576629711894132925, guid: 63e702d57fb77e24bbebdcf5827ef0d6, type: 3}
   m_PrefabInstance: {fileID: 3336960328538873048}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5419041632236692715

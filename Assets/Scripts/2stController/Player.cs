@@ -42,6 +42,15 @@ public class Player : MonoBehaviour
     private bool isGrounded;
     private bool isWallDetected;
 
+    [Header("Coyote Time")]
+    [SerializeField] private float coyoteTimeDuration = 0.2f;
+    private float coyoteTimeCounter;
+
+    [Header("Ground Check Positions")]
+    [SerializeField] private float groundCheckOffset = 0.15f;  // De 0.15 a 0.2 según tu personaje
+
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -159,9 +168,10 @@ public class Player : MonoBehaviour
         {
             WallJump();
         }
-        else if (isGrounded)
+        else if (isGrounded || coyoteTimeCounter > 0f)
         {
             Jump();
+            coyoteTimeCounter = 0f; // Consumir coyote time
         }
         else if (canDoubleJump && doubleJumpSkillUnlocked)
         {
@@ -170,9 +180,9 @@ public class Player : MonoBehaviour
             Jump();
         }
 
-
         canWallSlide = false;
     }
+
 
     private void FlipController()
     {
@@ -245,22 +255,44 @@ public class Player : MonoBehaviour
 
     private void CollisionCheck()
     {
-        isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, whatIsGround);
-        isWallDetected = Physics2D.Raycast(transform.position, Vector2.right * facingDirection, wallCheckDistance, whatIsGround);
+        Vector2 centerPos = transform.position;
+        Vector2 leftPos = centerPos + Vector2.left * groundCheckOffset;
+        Vector2 rightPos = centerPos + Vector2.right * groundCheckOffset;
 
-        if (!isWallDetected && rb.velocity.y < 0)
+        bool centerHit = Physics2D.Raycast(centerPos, Vector2.down, groundCheckDistance, whatIsGround);
+        bool leftHit = Physics2D.Raycast(leftPos, Vector2.down, groundCheckDistance, whatIsGround);
+        bool rightHit = Physics2D.Raycast(rightPos, Vector2.down, groundCheckDistance, whatIsGround);
+
+        bool detectedGround = centerHit || leftHit || rightHit;
+
+        if (detectedGround)
         {
-            canWallSlide = true;
+            isGrounded = true;
+            coyoteTimeCounter = coyoteTimeDuration; // Reset coyote time
         }
         else
         {
-            canWallSlide = false;
+            isGrounded = false;
+            coyoteTimeCounter -= Time.deltaTime;
         }
+
+        isWallDetected = Physics2D.Raycast(centerPos, Vector2.right * facingDirection, wallCheckDistance, whatIsGround);
     }
+
+
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + wallCheckDistance * facingDirection, transform.position.y));
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - groundCheckDistance));
+        Vector2 centerPos = transform.position;
+        Vector2 leftPos = centerPos + Vector2.left * groundCheckOffset;
+        Vector2 rightPos = centerPos + Vector2.right * groundCheckOffset;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(centerPos, centerPos + Vector2.down * groundCheckDistance);
+        Gizmos.DrawLine(leftPos, leftPos + Vector2.down * groundCheckDistance);
+        Gizmos.DrawLine(rightPos, rightPos + Vector2.down * groundCheckDistance);
+
+        Gizmos.DrawLine(centerPos, centerPos + Vector2.right * wallCheckDistance * facingDirection);
     }
+
 }
