@@ -26,6 +26,9 @@ public class Player : MonoBehaviour
     private int facingDirection = 1;
     [SerializeField] private Vector2 wallJumpDirection;
 
+    private bool suppressExtraGroundChecks = false;
+
+
     [Header("Dash Settings")]
     [SerializeField] private float dashSpeed = 15f;
     [SerializeField] private float dashDuration = 0.2f;
@@ -49,7 +52,7 @@ public class Player : MonoBehaviour
     [Header("Ground Check Positions")]
     [SerializeField] private float groundCheckOffset = 0.15f;  // De 0.15 a 0.2 según tu personaje
 
-
+    
 
     void Start()
     {
@@ -201,13 +204,23 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
+    private void ReactivateExtraGroundChecks()
+    {
+        suppressExtraGroundChecks = false;
+    }
+
+
     private void WallJump()
     {
         canMove = false;
         canDoubleJump = true;
+        suppressExtraGroundChecks = true; // Desactiva raycasts laterales temporalmente
+
         rb.velocity = new Vector2(wallJumpDirection.x * -facingDirection, wallJumpDirection.y);
-        Invoke("EnableMovement", 0.2f); // Breve retraso para permitir el salto de la pared
+        Invoke(nameof(EnableMovement), 0.2f); // Espera antes de permitir movimiento
+        Invoke(nameof(ReactivateExtraGroundChecks), 0.2f); // 🔁 Reactiva raycasts laterales
     }
+
 
     private void WallSlide()
     {
@@ -260,15 +273,21 @@ public class Player : MonoBehaviour
         Vector2 rightPos = centerPos + Vector2.right * groundCheckOffset;
 
         bool centerHit = Physics2D.Raycast(centerPos, Vector2.down, groundCheckDistance, whatIsGround);
-        bool leftHit = Physics2D.Raycast(leftPos, Vector2.down, groundCheckDistance, whatIsGround);
-        bool rightHit = Physics2D.Raycast(rightPos, Vector2.down, groundCheckDistance, whatIsGround);
+        bool leftHit = false;
+        bool rightHit = false;
+
+        if (!suppressExtraGroundChecks)
+        {
+            leftHit = Physics2D.Raycast(leftPos, Vector2.down, groundCheckDistance, whatIsGround);
+            rightHit = Physics2D.Raycast(rightPos, Vector2.down, groundCheckDistance, whatIsGround);
+        }
 
         bool detectedGround = centerHit || leftHit || rightHit;
 
         if (detectedGround)
         {
             isGrounded = true;
-            coyoteTimeCounter = coyoteTimeDuration; // Reset coyote time
+            coyoteTimeCounter = coyoteTimeDuration;
         }
         else
         {
@@ -278,6 +297,7 @@ public class Player : MonoBehaviour
 
         isWallDetected = Physics2D.Raycast(centerPos, Vector2.right * facingDirection, wallCheckDistance, whatIsGround);
     }
+
 
 
 

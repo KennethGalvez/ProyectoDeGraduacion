@@ -9,10 +9,15 @@ public class MenuController : MonoBehaviour
 
     public void Nuevo(string nombreNivel)
     {
-        MuteMenuAudio(); // 🔇 Silencia el audio del menú antes de cambiar de escena
+        MuteMenuAudio(); //  Silencia el audio del menú antes de cambiar de escena
         SceneManager.LoadScene(nombreNivel);
         pointsManager.ResetStats();
+
+        //  Reiniciar habilidades desbloqueadas
+        QuickTimeManager.dashUnlocked = false;
+        QuickTimeManager.doubleJumpUnlocked = false;
     }
+
 
     public void Creditos(string nombreNivel)
     {
