@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     private bool dashSkillUnlocked = false;
     private bool doubleJumpSkillUnlocked = false;
 
+    private bool jumpReleased = true;
+
+
 
     private bool canMove = true;
     private bool canDoubleJump;
@@ -49,6 +52,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float coyoteTimeDuration = 0.2f;
     private float coyoteTimeCounter;
 
+    private bool hasJumpedSinceGrounded = false;
+
+
     [Header("Ground Check Positions")]
     [SerializeField] private float groundCheckOffset = 0.15f;  // De 0.15 a 0.2 según tu personaje
 
@@ -76,8 +82,9 @@ public class Player : MonoBehaviour
         AnimatorController();
         CheckInput();
 
-        if (isGrounded)
-        {
+        if (isGrounded && jumpReleased)
+        {   
+            hasJumpedSinceGrounded = false;
             canMove = true;
             canDoubleJump = doubleJumpSkillUnlocked;
             isWallSliding = false;
@@ -114,8 +121,14 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            jumpReleased = false;
             JumpButton();
         }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            jumpReleased = true;
+        }
+
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashSkillUnlocked)
         {
@@ -171,9 +184,10 @@ public class Player : MonoBehaviour
         {
             WallJump();
         }
-        else if (isGrounded || coyoteTimeCounter > 0f)
+        else if ((isGrounded || coyoteTimeCounter > 0f) && !hasJumpedSinceGrounded)
         {
             Jump();
+            hasJumpedSinceGrounded = true;
             coyoteTimeCounter = 0f; // Consumir coyote time
         }
         else if (canDoubleJump && doubleJumpSkillUnlocked)
