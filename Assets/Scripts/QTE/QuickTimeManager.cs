@@ -16,6 +16,8 @@ public class QuickTimeManager : MonoBehaviour
     public static bool dashUnlocked = false;
     public static bool doubleJumpUnlocked = false;
 
+    private bool waitingForDecision = false;
+
     private void Start()
     {
         DestroyExtraEventSystems();
@@ -25,27 +27,32 @@ public class QuickTimeManager : MonoBehaviour
         {
             currentTimeline.gameObject.SetActive(true);
             currentTimeline.Play();
+            waitingForDecision = true; // Ahora esperamos la decisión
         }
+
     }
 
     private void Update()
     {
-        if (!eventCompleted && currentTimeline != null && currentTimeline.state == PlayState.Playing)
+        if (!eventCompleted && waitingForDecision)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 pointsManager.AddHeartPoints(1);
                 dashUnlocked = true;
+                waitingForDecision = false;
                 InterruptTimeline(heartPathTimeline, goToNivel2: true);
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
                 pointsManager.AddMindPoints(1);
                 doubleJumpUnlocked = true;
+                waitingForDecision = false;
                 InterruptTimeline(mindPathTimeline, goToNivel2: true);
             }
         }
     }
+
 
     private void InterruptTimeline(PlayableDirector nextTimeline, bool goToNivel2 = false)
     {

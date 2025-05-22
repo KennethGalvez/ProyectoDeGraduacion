@@ -40,6 +40,9 @@ public class Player : MonoBehaviour
     private bool isDashing = false;
     private float dashTimeCounter;
 
+    private bool dashCooldownInProgress = false;
+
+
 
     [Header("Collision")]
     [SerializeField] private float groundCheckDistance;
@@ -57,6 +60,11 @@ public class Player : MonoBehaviour
 
     [Header("Ground Check Positions")]
     [SerializeField] private float groundCheckOffset = 0.15f;  // De 0.15 a 0.2 según tu personaje
+
+    [Header("Jump Buffer")]
+    [SerializeField] private float jumpBufferTime = 0.15f;
+    private float jumpBufferCounter;
+
 
     
 
@@ -81,9 +89,23 @@ public class Player : MonoBehaviour
         FlipController();
         AnimatorController();
         CheckInput();
+        
+        if (jumpBufferCounter > 0f)
+        {
+            if (!isDashing) // 💡 no intentar saltar mientras dash activo
+            {
+                JumpButton();
+                jumpBufferCounter = 0f; // Consumir el buffer
+            }
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+
 
         if (isGrounded && jumpReleased)
-        {   
+        {
             hasJumpedSinceGrounded = false;
             canMove = true;
             canDoubleJump = doubleJumpSkillUnlocked;
@@ -121,13 +143,14 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            jumpReleased = false;
-            JumpButton();
+            jumpBufferCounter = jumpBufferTime; // 💡 activa el buffer
         }
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
             jumpReleased = true;
         }
+
 
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && dashSkillUnlocked)
@@ -149,13 +172,13 @@ public class Player : MonoBehaviour
     {
         isDashing = true;
         canDash = false;
+        dashCooldownInProgress = true; // ✅ Marcar cooldown activo
         dashTimeCounter = dashDuration;
 
-        // Freeze Y velocity so it feels sharp
         rb.velocity = new Vector2(facingDirection * dashSpeed, 0f);
-
-        anim.SetTrigger("Dash"); // We'll add this animation trigger later
+        anim.SetTrigger("Dash");
     }
+
 
     private void DashLogic()
     {
@@ -175,7 +198,9 @@ public class Player : MonoBehaviour
     private void ResetDash()
     {
         canDash = true;
+        dashCooldownInProgress = false; // ✅ Cooldown terminado
     }
+
 
 
     private void JumpButton()
@@ -228,12 +253,22 @@ public class Player : MonoBehaviour
     {
         canMove = false;
         canDoubleJump = true;
-        suppressExtraGroundChecks = true; // Desactiva raycasts laterales temporalmente
+        suppressExtraGroundChecks = true;
 
         rb.velocity = new Vector2(wallJumpDirection.x * -facingDirection, wallJumpDirection.y);
-        Invoke(nameof(EnableMovement), 0.2f); // Espera antes de permitir movimiento
-        Invoke(nameof(ReactivateExtraGroundChecks), 0.2f); // 🔁 Reactiva raycasts laterales
+
+        Invoke(nameof(EnableMovement), 0.2f);
+        Invoke(nameof(ReactivateExtraGroundChecks), 0.2f);
+
+        // ✅ Solo reinicia cooldown si no hay uno activo
+        if (dashSkillUnlocked && !canDash && !dashCooldownInProgress)
+        {
+            dashCooldownInProgress = true;
+            Invoke(nameof(ResetDash), dashCooldown);
+        }
     }
+
+
 
 
     private void WallSlide()

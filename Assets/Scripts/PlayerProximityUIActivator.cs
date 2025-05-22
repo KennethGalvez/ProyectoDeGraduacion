@@ -3,11 +3,12 @@ using UnityEngine.UI;
 
 public class PlayerProximityUIActivator : MonoBehaviour
 {
-    public Collider2D triggerCollider;       // Assign the BoxCollider2D attached to this object
-    public LayerMask playerLayer;            // Assign to "Player" layer
-    public GameObject uiImage;               // Assign the Image (or any UI GameObject) in your Canva
+    public Collider2D triggerCollider;
+    public LayerMask playerLayer;
+    public GameObject uiImage;
 
     private bool isPlayerInside = false;
+    private bool hasBeenShown = false; // ✅ Nuevo control
 
     private void Update()
     {
@@ -20,10 +21,11 @@ public class PlayerProximityUIActivator : MonoBehaviour
 
         if (hit != null && hit.CompareTag("Player"))
         {
-            if (!isPlayerInside)
+            if (!isPlayerInside && !hasBeenShown)
             {
                 isPlayerInside = true;
-                uiImage.SetActive(true); // Show image
+                hasBeenShown = true;            // ✅ Evita que se vuelva a mostrar
+                uiImage.SetActive(true);
                 Debug.Log("Player entered trigger zone");
             }
         }
@@ -32,7 +34,7 @@ public class PlayerProximityUIActivator : MonoBehaviour
             if (isPlayerInside)
             {
                 isPlayerInside = false;
-                uiImage.SetActive(false); // Hide image
+                uiImage.SetActive(false);
                 Debug.Log("Player left trigger zone");
             }
         }
