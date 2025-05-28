@@ -1,106 +1,135 @@
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class QuickTimeManager : MonoBehaviour
 {
-    public PointsManager pointsManager;
-
-    public PlayableDirector currentTimeline;     // Timeline activo al iniciar
-    public PlayableDirector heartPathTimeline;   // Timeline Q
-    public PlayableDirector mindPathTimeline;    // Timeline E
-
-    private bool eventCompleted = false;
+    public PlayableDirector introTimeline;
+    public PlayableDirector heartPathTimeline;
+    public PlayableDirector mindPathTimeline;
 
     public static bool dashUnlocked = false;
     public static bool doubleJumpUnlocked = false;
 
-    private bool waitingForDecision = false;
+    [Header("Decision Settings")]
+    public float decisionTime = 15f;
+    private float decisionTimer;
+    private bool decisionPhase = false;
+    private int currentSelection = 0;
+
+    [Header("UI Elements")]
+    public Image heartImage;
+    public Image mindImage;
+    public float scaleMultiplier = 1.2f;
+    private Vector3 heartOriginalScale;
+    private Vector3 mindOriginalScale;
+
+    [Header("Points")]
+    public PointsManager pointsManager;
+    public int pointsPerDecision = 1;
+    public float progressIncrement = 0.1f;  // Cuánto sumar por decisión
 
     private void Start()
     {
-        DestroyExtraEventSystems();
-        DisableExtraAudioListeners();
-
-        if (currentTimeline != null)
+        // Iniciar Timeline inicial
+        if (introTimeline != null)
         {
-            currentTimeline.gameObject.SetActive(true);
-            currentTimeline.Play();
-            waitingForDecision = true; // Ahora esperamos la decisión
+            introTimeline.stopped += OnIntroTimelineFinished;
+            introTimeline.gameObject.SetActive(true);
+            introTimeline.Play();
         }
 
+        if (heartImage != null)
+            heartOriginalScale = heartImage.transform.localScale;
+        if (mindImage != null)
+            mindOriginalScale = mindImage.transform.localScale;
+
+        decisionTimer = decisionTime;
+        UpdateSelectionVisuals();
+    }
+
+    private void OnIntroTimelineFinished(PlayableDirector director)
+    {
+        decisionPhase = true;
     }
 
     private void Update()
     {
-        if (!eventCompleted && waitingForDecision)
+        if (decisionPhase)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            HandleDecisionInput();
+            decisionTimer -= Time.deltaTime;
+
+            if (decisionTimer <= 0f)
             {
-                pointsManager.AddHeartPoints(1);
-                dashUnlocked = true;
-                waitingForDecision = false;
-                InterruptTimeline(heartPathTimeline, goToNivel2: true);
-            }
-            else if (Input.GetKeyDown(KeyCode.E))
-            {
-                pointsManager.AddMindPoints(1);
-                doubleJumpUnlocked = true;
-                waitingForDecision = false;
-                InterruptTimeline(mindPathTimeline, goToNivel2: true);
+                ProcessDecision();
             }
         }
     }
 
-
-    private void InterruptTimeline(PlayableDirector nextTimeline, bool goToNivel2 = false)
+    private void HandleDecisionInput()
     {
-        // Detener y desactivar el timeline actual
-        currentTimeline.Stop();
-        currentTimeline.gameObject.SetActive(false);
-
-        // Activar y reproducir el siguiente timeline
-        if (nextTimeline != null)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            nextTimeline.gameObject.SetActive(true);
-            nextTimeline.Play();
-
-            if (goToNivel2)
-            {
-                nextTimeline.stopped += OnMindPathTimelineFinished;
-            }
+            currentSelection = 0;
+            UpdateSelectionVisuals();
         }
-
-        eventCompleted = true;
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            currentSelection = 1;
+            UpdateSelectionVisuals();
+        }
     }
 
-    private void OnMindPathTimelineFinished(PlayableDirector director)
+    private void UpdateSelectionVisuals()
+    {
+        if (heartImage != null && mindImage != null)
+        {
+            heartImage.transform.localScale = (currentSelection == 0) ? heartOriginalScale * scaleMultiplier : heartOriginalScale;
+            mindImage.transform.localScale = (currentSelection == 1) ? mindOriginalScale * scaleMultiplier : mindOriginalScale;
+        }
+    }
+
+    private void ProcessDecision()
+    {
+        decisionPhase = false;
+
+        if (currentSelection == 0)
+        {
+            dashUnlocked = true;
+            pointsManager.AddHeartPoints(pointsPerDecision);
+
+            // 🚀 Usar ProgressBarManager
+            if (ProgressBarManager.Instance != null)
+                ProgressBarManager.Instance.AddHeartProgress(progressIncrement);
+
+            ActivateTimeline(heartPathTimeline);
+        }
+        else
+        {
+            doubleJumpUnlocked = true;
+            pointsManager.AddMindPoints(pointsPerDecision);
+
+            if (ProgressBarManager.Instance != null)
+                ProgressBarManager.Instance.AddMindProgress(progressIncrement);
+
+            ActivateTimeline(mindPathTimeline);
+        }
+    }
+
+    private void ActivateTimeline(PlayableDirector timeline)
+    {
+        if (timeline != null)
+        {
+            timeline.gameObject.SetActive(true);
+            timeline.Play();
+            timeline.stopped += OnTimelineFinished;
+        }
+    }
+
+    private void OnTimelineFinished(PlayableDirector director)
     {
         SceneManager.LoadScene("Nivel 2");
-    }
-
-    private void DestroyExtraEventSystems()
-    {
-        EventSystem[] eventSystems = FindObjectsOfType<EventSystem>();
-        if (eventSystems.Length > 1)
-        {
-            for (int i = 1; i < eventSystems.Length; i++)
-            {
-                Destroy(eventSystems[i].gameObject);
-            }
-        }
-    }
-
-    private void DisableExtraAudioListeners()
-    {
-        AudioListener[] audioListeners = FindObjectsOfType<AudioListener>();
-        if (audioListeners.Length > 1)
-        {
-            for (int i = 1; i < audioListeners.Length; i++)
-            {
-                audioListeners[i].enabled = false;
-            }
-        }
     }
 }
